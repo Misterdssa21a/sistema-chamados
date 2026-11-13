@@ -1,0 +1,140 @@
+:root {
+    --azul: #1a73e8;
+    --azul-escuro: #1558b0;
+    --fundo: #f4f6f8;
+    --texto: #1f2933;
+    --borda: #d8dee4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    margin: 0;
+}
+
+/* Barra do topo */
+.topo { background: var(--azul); color: #ffffff; }
+.topo-interno {
+    max-width: 1100px;
+    margin: auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.logo { font-weight: bold; font-size: 1.1rem; }
+.topo nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+.topo nav a:hover, .topo nav a.ativo { background: rgba(255, 255, 255, 0.2); }
+
+/* Conteúdo */
+main {
+    max-width: 640px;
+    margin: 24px auto;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+main.largo { max-width: 1100px; }
+h1 { margin-top: 0; }
+h2 { font-size: 1.1rem; margin-bottom: 8px; }
+.subtitulo { color: #52606d; margin-top: -8px; }
+
+/* Formulário */
+label { display: block; margin-top: 14px; font-weight: 600; }
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--azul);
+    border-color: var(--azul);
+}
+.linha { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dica { color: #7b8794; }
+
+button, .botao {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 11px 22px;
+    background: var(--azul);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+button:hover, .botao:hover { background: var(--azul-escuro); }
+.botao-claro { background: #e4e7eb; color: var(--texto); }
+.botao-claro:hover { background: #cbd2d9; }
+.botao-pequeno { margin: 0; padding: 6px 12px; font-size: 0.85rem; background: #2e9e5b; }
+.botao-pequeno:hover { background: #237a45; }
+
+/* Avisos */
+.aviso { padding: 16px 20px; border-radius: 8px; }
+.aviso h2 { margin-top: 0; }
+.aviso-ok { background: #e8f5e9; border-left: 5px solid #2e9e5b; }
+.aviso-erro { background: #fde8e8; border-left: 5px solid #d64545; }
+
+/* Resumo e etiquetas */
+.resumo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.cartao {
+    background: var(--fundo);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.cartao .numero { font-size: 1.8rem; font-weight: bold; }
+.cartao-aberto { background: #fff8e1; }
+.cartao-resolvido { background: #e8f5e9; }
+
+.etiquetas { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.etiquetas li { background: #e8f0fe; color: var(--azul-escuro); padding: 6px 12px; border-radius: 999px; }
+
+.filtro { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.filtro label { margin: 0; }
+.filtro select { width: auto; margin: 0; }
+
+/* Tabela */
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+th, td { border-bottom: 1px solid var(--borda); padding: 10px; text-align: left; vertical-align: top; }
+th { background: var(--azul); color: #ffffff; white-space: nowrap; }
+td form { margin: 0; }
+
+.prioridade-alta  { background: #fde8e8; }
+.prioridade-média { background: #fff8e1; }
+.prioridade-baixa { background: #e8f5e9; }
+
+.selo, .status { padding: 3px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+.selo-alta  { background: #d64545; color: #ffffff; }
+.selo-média { background: #f0a500; color: #ffffff; }
+.selo-baixa { background: #2e9e5b; color: #ffffff; }
+.status-aberto    { background: #fff3cd; color: #7a5c00; }
+.status-resolvido { background: #d4edda; color: #1d5c32; }
+
+.vazio { color: #7b8794; text-align: center; padding: 24px; }
+
+@media (max-width: 600px) {
+    .linha, .resumo { grid-template-columns: 1fr; }
+    main { margin: 12px; padding: 18px; }
+}

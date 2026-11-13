@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abrir Chamado</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header class="topo">
+        <div class="topo-interno">
+            <span class="logo">🛠️ Help Desk do Laboratório</span>
+            <nav>
+                <a href="index.html" class="ativo">Abrir chamado</a>
+                <a href="lista.php">Ver chamados</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Abrir Chamado Técnico</h1>
+        <p class="subtitulo">Descreva o problema e a equipe de TI vai atender o mais rápido possível.</p>
+
+        <form action="salvar.php" method="POST">
+
+            <label for="solicitante">Seu nome</label>
+            <input type="text" id="solicitante" name="solicitante" placeholder="Ex.: Maria Souza" required>
+
+            <div class="linha">
+                <div>
+                    <label for="equipamento">Equipamento</label>
+                    <select id="equipamento" name="equipamento" required>
+                        <option value="">Selecione...</option>
+                        <option>Computador</option>
+                        <option>Projetor</option>
+                        <option>Internet</option>
+                        <option>Impressora</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" name="prioridade" required>
+                        <option>Baixa</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="descricao">Descreva o problema</label>
+            <textarea id="descricao" name="descricao" rows="4"
+                      placeholder="Ex.: O projetor da sala 3 não liga" required></textarea>
+            <small class="dica">Mínimo de 10 caracteres.</small>
+
+            <button type="submit">Enviar chamado</button>
+        </form>
+    </main>
+</body>
+</html>
